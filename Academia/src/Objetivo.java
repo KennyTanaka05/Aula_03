@@ -1,0 +1,5 @@
+public enum Objetivo {
+    HIPERTROFIA,
+    EMAGRECIMENTO,
+    CONDICIONAMENTO_FISICO
+}

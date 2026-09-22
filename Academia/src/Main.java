@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 
 public class Main {
+
     static Scanner scanner = new Scanner(System.in);
     public static void menuCrud(String entidade){
         while(true) {
@@ -37,11 +38,37 @@ public class Main {
 
         }
     }
+    public static String lerValidarEntradas(String prompt, String regex, String mensagemErro){
+        while (true){
+            System.out.println(prompt);
+            String valor = scanner.nextLine();
+            if (valor.matches(regex)) return valor;
+            System.out.println(mensagemErro);
+        }
+    }
     public static void cadastrarExercicio() {
-        String nome;
-        int quantideSerie;
-        int numeroRepeticoes;
-        String carga;
+        String nome = lerValidarEntradas(
+                "Digite o nome do exercícío:",
+                "[\\p{L}\\p{N}]+",
+                "O no do exercicio só pode conter letras e números"
+        );
+        int quantideSerie = Integer.parseInt(lerValidarEntradas(
+                "",
+                "",
+                ""));
+        int numeroRepeticoes = Integer.parseInt(lerValidarEntradas(
+                "",
+                "",
+                ""
+        ));
+        String carga = lerValidarEntradas(
+                "Digite o nome do exercícío:",
+                "[\\p{L}\\p{N}]+",
+                "O no do exercicio só pode conter letras e números");
+
+        Exercicio exercicio = new Exercicio();
+
+
 
         while (true) {
             System.out.println("Digite o nome do exercicio:");
@@ -50,9 +77,9 @@ public class Main {
                 continue;
             } else {
                 break;
-
             }
         }
+
         System.out.println("Digite a quantidade de séries:");
         String series = scanner.nextLine();
         while (true){
@@ -62,7 +89,6 @@ public class Main {
             } else {
                 System.out.println("Digite um número!!");
             }
-
         }
 
         while(true){

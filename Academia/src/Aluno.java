@@ -3,12 +3,9 @@ import java.util.ArrayList;
 public class Aluno {
     private String nome;
     private String cpf;
-    private int numeroMatricula;
+    private final int numeroMatricula;
     private Plano plano;
     private ArrayList<Treino> treinos;
-
-
-
 
     public Aluno(String nome, String cpf, int numeroMatricula) {
         this.nome = nome;
@@ -45,9 +42,6 @@ public class Aluno {
         return numeroMatricula;
     }
 
-    public void setNumeroMatricula(int numeroMatricula) {
-        this.numeroMatricula = numeroMatricula;
-    }
 
     public String getCpf() {
         return cpf;
